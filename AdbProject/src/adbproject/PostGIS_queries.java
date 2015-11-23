@@ -22,7 +22,8 @@ public class PostGIS_queries {
     public static void main(String[] args) {
         
         // TODO code application logic here
-        long startTime = System.currentTimeMillis();
+        long startTime=0;
+        long stopTime=0;
         Connection c = null;
        Statement stmt = null;
        try {
@@ -34,7 +35,9 @@ public class PostGIS_queries {
          System.out.println("Opened database successfully");
 
          stmt = c.createStatement();
+         startTime = System.currentTimeMillis();
          ResultSet rs = stmt.executeQuery( "select st_area(geom) from ne_110m_lakes;" );
+         stopTime = System.currentTimeMillis();
          while ( rs.next() ) {
             
             double  area = rs.getDouble("st_area");
@@ -51,7 +54,7 @@ public class PostGIS_queries {
          System.exit(0);
        }
        //System.out.println("Operation done successfully");
-       long stopTime = System.currentTimeMillis();
+      
       long elapsedTime = stopTime - startTime;
       System.out.println("Time taken:"+elapsedTime+"ms");
     }
