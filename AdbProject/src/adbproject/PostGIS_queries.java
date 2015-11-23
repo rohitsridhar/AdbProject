@@ -34,12 +34,12 @@ public class PostGIS_queries {
          System.out.println("Opened database successfully");
 
          stmt = c.createStatement();
-         ResultSet rs = stmt.executeQuery( "SELECT name FROM ne_110m_lakes;" );
+         ResultSet rs = stmt.executeQuery( "select st_area(geom) from ne_110m_lakes;" );
          while ( rs.next() ) {
             
-            String  name = rs.getString("name");
+            double  area = rs.getDouble("st_area");
              
-            System.out.println( "NAME = " + name );
+            System.out.println( "Area = " + area );
            
             System.out.println();
          }
