@@ -39,16 +39,17 @@ public class PostGIS_queries {
          
          FileReader reader = new FileReader("src/adbproject/queries.txt");
          BufferedReader bufferedReader = new BufferedReader(reader);
-         
+         int i=0;
          String line;
          stmt = c.createStatement();
          ResultSet rs=null;
             while ((line = bufferedReader.readLine()) != null) {
+                i++;
                 startTime = System.currentTimeMillis();
                 rs = stmt.executeQuery( line );
                 stopTime = System.currentTimeMillis();
                 long elapsedTime = stopTime - startTime;
-                System.out.println("Time taken:"+elapsedTime+"ms");
+                System.out.println("Time taken for query" +i+ ":" +elapsedTime+"ms");
                 rs.close();
                 
             }        
