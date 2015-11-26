@@ -1,2 +1,4 @@
 select a1.name from ne_110m_admin_0_countries a1 where St_Touches((select geom from ne_110m_admin_0_countries where name='Zimbabwe'),a1.geom)=TRUE;
 select distinct least(a.name,a1.name), greatest(a.name,a1.name) from ne_110m_admin_0_countries a,ne_110m_admin_0_countries a1 where a.name<>a1.name and St_Touches(a.geom,a1.geom)=True;      
+select r.name,ci.name from st_us ci,maj_riv r where st_crosses(r.geom,ci.geom)=true;
+select r.name,ci.name from st_us ci,maj_riv r where st_within(r.geom,ci.geom)=true;
