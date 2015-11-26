@@ -1,0 +1,5 @@
+ select distinct min(a.name,a1.name), max(a.name,a1.name) from ne_110m_admin_0_countries a,ne_110m_admin_0_countries a1 where a.name<>a1.name and Touches(a.geometry,a1.geometry)=1;  
+ select a1.name from ne_110m_admin_0_countries a1 where Touches((select geometry from ne_110m_admin_0_countries where name='Zimbabwe'),a1.geometry)=1 ; 
+ select distinct min(a.name,a1.name), max(a.name,a1.name) from ne_110m_admin_0_countries a,ne_110m_admin_0_countries a1 where a.name<>a1.name and Overlaps(a.geometry,a1.geometry)=1;           
+ select min(a.name,a1.name), max(a.name,a1.name) from ne_110m_admin_0_countries a,ne_110m_admin_0_countries a1 where a.name<>a1.name and Disjoint(a.geometry,a1.geometry)=1;
+ 
