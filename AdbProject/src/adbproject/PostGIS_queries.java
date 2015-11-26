@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 
 
@@ -33,29 +36,46 @@ public class PostGIS_queries {
             "postgres", "rohit123");
          c.setAutoCommit(false);
          System.out.println("Opened database successfully");
-
+         
+         FileReader reader = new FileReader("src/adbproject/queries.txt");
+         BufferedReader bufferedReader = new BufferedReader(reader);
+         
+         String line;
          stmt = c.createStatement();
-         startTime = System.currentTimeMillis();
-         ResultSet rs = stmt.executeQuery( "select st_area(geom) from ne_110m_lakes;" );
-         stopTime = System.currentTimeMillis();
-         while ( rs.next() ) {
+         ResultSet rs=null;
+            while ((line = bufferedReader.readLine()) != null) {
+                startTime = System.currentTimeMillis();
+                rs = stmt.executeQuery( line );
+                stopTime = System.currentTimeMillis();
+                long elapsedTime = stopTime - startTime;
+                System.out.println("Time taken:"+elapsedTime+"ms");
+                rs.close();
+                
+            }        
+         
+         
+         
+         /*while ( rs.next() ) {
             
-            double  area = rs.getDouble("st_area");
+            String  name = rs.getString("least");
+            String name2=  rs.getString("greatest");
              
-            System.out.println( "Area = " + area );
+            //System.out.println( "Country1 = " + name );
+            //System.out.println( "Country2 = " + name2 );
            
-            System.out.println();
+            //System.out.println();
          }
-         rs.close();
+         * 
+         */
          stmt.close();
          c.close();
+         reader.close();
        } catch ( Exception e ) {
          System.err.println( e.getClass().getName()+": "+ e.getMessage() );
          System.exit(0);
        }
        //System.out.println("Operation done successfully");
       
-      long elapsedTime = stopTime - startTime;
-      System.out.println("Time taken:"+elapsedTime+"ms");
+      
     }
 }
