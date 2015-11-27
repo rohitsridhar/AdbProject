@@ -2,4 +2,11 @@
  select a1.name from ne_110m_admin_0_countries a1 where Touches((select geometry from ne_110m_admin_0_countries where name='Zimbabwe'),a1.geometry)=1 ; 
  select distinct min(a.name,a1.name), max(a.name,a1.name) from ne_110m_admin_0_countries a,ne_110m_admin_0_countries a1 where a.name<>a1.name and Overlaps(a.geometry,a1.geometry)=1;           
  select min(a.name,a1.name), max(a.name,a1.name) from ne_110m_admin_0_countries a,ne_110m_admin_0_countries a1 where a.name<>a1.name and Disjoint(a.geometry,a1.geometry)=1;
- 
+ select distinct min(r.name, sk.name),max(r.name,sk.name) from ski_areas_all r,ski_areas_all sk where equals(r.geometry,sk.geometry)=1 and r.name<>sk.name;
+ select a.name,a1.name from ne_10m_lakes a,ne_10m_lakes a1 where a.name<>a1.name and within(a.geometry,a1.geometry)=1;
+ select length(geometry) from maj_riv where name='FOUNTAIN CR';
+ select name,min(length(geometry)) from maj_riv;
+ select length(geometry) from maj_riv;
+ select dimension(geometry)from ski_areas_all;
+ select dimension(geometry) from maj_riv;
+ select dimension(geometry) from ne_110m_admin_0_countries;
