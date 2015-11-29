@@ -71,18 +71,7 @@ public class PostGIS_queries {
          
          
          
-         /*while ( rs.next() ) {
-            
-            String  name = rs.getString("least");
-            String name2=  rs.getString("greatest");
-             
-            //System.out.println( "Country1 = " + name );
-            //System.out.println( "Country2 = " + name2 );
-           
-            //System.out.println();
-         }
-         * 
-         */
+    
          stmt.close();
          c.close();
          reader.close();
