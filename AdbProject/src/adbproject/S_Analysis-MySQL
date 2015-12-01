@@ -1,1 +1,11 @@
-
+select dimension(shape) from ne_110m_admin_0_countries;
+select st_dimension(shape) from maj_riv;
+select st_dimension(shape) from ski_areas_all;
+select area(shape) from ne_110m_admin_0_countries;
+select max(area(shape)) from ne_110m_admin_0_countries;
+select st_length(shape) from maj_riv where name='FOUNTAIN CR';
+select max(st_length(shape)) from maj_riv;
+select st_length(shape) from maj_riv;
+select st_convexhull(shape) from ne_110m_admin_0_countries;
+select envelope(shape) from maj_riv;
+select distinct sk.name as ski_name, co.name as lake_name from ne_10m_lakes co,ski_areas_all sk where Distance(co.shape,sk.shape)<100 limit 100;
