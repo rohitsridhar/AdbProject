@@ -8,5 +8,5 @@ select max(st_length(geom)) from maj_riv;
 select st_length(geom) from maj_riv;
 select st_convexhull(geom) from ne_110m_admin_0_countries;
 select st_envelope(geom) from maj_riv;
-select distinct sk.name as ski_name, co.name as lake_name from ne_10m_lakes co,ski_areas_all sk where St_Distance(co.geom,sk.geom)<100;
+select distinct sk.name as ski_name, co.name as lake_name from ne_10m_lakes co,ski_areas_all sk where St_Distance(co.geom,sk.geom)<100 limit 100;
 select st_buffer(geom,5) from ne_110m_admin_0_countries;

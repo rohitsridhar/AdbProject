@@ -1,13 +1,13 @@
 Time taken for query 1: 26 ms
-Memory used for execution of query 1: 0.37 MB
+Memory used for execution of query 1: 0.23 MB
 
-Time taken for query 2: 70 ms
+Time taken for query 2: 68 ms
 Memory used for execution of query 2: 0.93 MB
 
-Time taken for query 3: 4 ms
+Time taken for query 3: 3 ms
 Memory used for execution of query 3: 0.00 MB
 
-Time taken for query 4: 4 ms
+Time taken for query 4: 2 ms
 Memory used for execution of query 4: 0.23 MB
 
 Time taken for query 5: 2 ms
@@ -16,21 +16,21 @@ Memory used for execution of query 5: 0.00 MB
 Time taken for query 6: 8 ms
 Memory used for execution of query 6: 0.00 MB
 
-Time taken for query 7: 43 ms
+Time taken for query 7: 41 ms
 Memory used for execution of query 7: 0.00 MB
 
-Time taken for query 8: 107 ms
-Memory used for execution of query 8: 1.45 MB
+Time taken for query 8: 102 ms
+Memory used for execution of query 8: 1.39 MB
 
-Time taken for query 9: 34 ms
+Time taken for query 9: 33 ms
 Memory used for execution of query 9: 0.00 MB
 
-Time taken for query 10: 143 ms
-Memory used for execution of query 10: 4.01 MB
+Time taken for query 10: 130 ms
+Memory used for execution of query 10: 4.04 MB
 
-Time taken for query 11: 16753 ms
-Memory used for execution of query 11: 12.83 MB
+Time taken for query 11: 11152 ms
+Memory used for execution of query 11: 0.00 MB
 
-Time taken for query 12: 1401 ms
-Memory used for execution of query 12: 0.44 MB
+Time taken for query 12: 1095 ms
+Memory used for execution of query 12: 0.47 MB
 
