@@ -52,9 +52,6 @@ public class PostGIS_queries {
          String line;
          stmt = c.createStatement();
          ResultSet rs=null;
-         
-         
-        
             while ((line = bufferedReader.readLine()) != null) {
                 i++;
                 startTime = System.currentTimeMillis();
@@ -71,6 +68,8 @@ public class PostGIS_queries {
                 rs.close();
                 
             }        
+         
+         
          
     
          stmt.close();
