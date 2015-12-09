@@ -1,6 +1,5 @@
 select dimension(geometry)from Crops;
 select area(geometry)from Crops;
-select max(area(geometry))from Crops;
 select dimension(geometry) from utilitylines;
 select length(geometry) from utilitylines;
 select max(length(geometry)) from utilitylines;
