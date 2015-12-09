@@ -1,8 +1,0 @@
-select dimension(geometry)from Crops;
-select area(geometry)from Crops;
-select max(area(geometry))from Crops;
-select buffer(geometry,5) from Crops limit 20;
-select dimension(geometry) from utilitylines;
-select length(geometry) from utilitylines;
-select envelope(geometry) from utilitylines;
-select dimension(geometry) from waterpoints;
