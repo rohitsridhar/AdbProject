@@ -1,6 +1,5 @@
 select st_dimension(geom)from Crops;
 select st_area(geom)from Crops;
-select max(st_area(geom))from Crops;
 select st_dimension(geom) from UtilityLines;
 select st_length(geom) from UtilityLines;
 select max(st_length(geom)) from UtilityLines;
