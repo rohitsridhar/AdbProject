@@ -1,10 +1,10 @@
 select st_dimension(geom)from Crops;
 select st_area(geom)from Crops;
 select max(st_area(geom))from Crops;
-select st_buffer(geom,5) from Crops limit 20;
 select st_dimension(geom) from UtilityLines;
 select st_length(geom) from UtilityLines;
 select max(st_length(geom)) from UtilityLines;
 select st_envelope(geom) from UtilityLines;
 select st_dimension(geom) from waterpoints;
 select distinct sk.gid from Utilitylines co,waterpoints sk where st_Distance(co.geom,sk.geom)<100 limit 50;
+select st_buffer(geom,5) from Crops limit 20;
