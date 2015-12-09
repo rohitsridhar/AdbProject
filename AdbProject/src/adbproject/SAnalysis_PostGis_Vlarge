@@ -1,6 +1,5 @@
 select st_dimension(geom)from Poly_veg;
 select st_area(geom)from Poly_veg;
-select max(st_area(geom))from Poly_veg;
 select st_dimension(geom) from MajorRoads;
 select st_length(geom) from MajorRoads;
 select max(st_length(geom)) from MajorRoads;
