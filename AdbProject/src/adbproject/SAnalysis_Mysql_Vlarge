@@ -1,0 +1,9 @@
+select dimension(shape) from poly_veg;
+select area(shape) from poly_veg;
+select max(area(shape)) from poly_veg;
+select dimension(shape) from majorroads;
+select length(shape) from majorroads;
+select max(length(shape)) from majorroads;
+select Envelope(shape) from Majorroads;
+select dimension(shape) from Places;
+select distinct sk.OGR_FID from majorroads co,places sk where st_Distance(co.shape,sk.shape)<100 limit 50;
