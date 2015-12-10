@@ -1,0 +1,2 @@
+SELECT gid,ST_Distance(geom, ST_MakePoint(7.899, 23.455, 4326) )AS dist FROM majorroads WHERE ST_Distance(geom, ST_MakePoint(7.899, 23.455, 4326)) < 21;
+select i.gid,c.gid from IH_sites i, cityareas c where st_within(i.geom,c.geom)=true limit 10;
