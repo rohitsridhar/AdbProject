@@ -1,0 +1,2 @@
+SELECT pk_uid,Distance(geometry, MakePoint(7.899, 23.455, 4326)) AS dist FROM majorroads WHERE Distance(geometry, MakePoint(7.899, 23.455, 4326)) < 21;
+select i.pk_uid,c.pk_uid from IH_sites i, cityareas c where within(i.geometry,c.geometry)=1 limit 10;
