@@ -1,0 +1,2 @@
+SELECT * FROM crops WHERE GeometryType(Centroid(shape)) = 'POINT' AND ST_Distance_Sphere( Point(ST_X(ST_Centroid(shape)), ST_Y(ST_Centroid(shape))), (Point(6.9333, 46.8167))) <= 21 * 1609;
+select i.OGR_FID,c.OGR_FID from IH_sites i, cityareas c where within(i.shape,c.shape)=true limit 10;
