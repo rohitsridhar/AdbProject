@@ -1,0 +1,11 @@
+select dimension(shape) from cityAreas;
+select st_dimension(shape) from maj_riv2;
+select st_dimension(shape) from minnesota_poi;
+select area(shape) from cityAreas;
+select max(area(shape)) from cityAreas;
+select st_length(shape) from maj_riv2 where name='FOUNTAIN CR';
+select max(st_length(shape)) from maj_riv2;
+select st_length(shape) from maj_riv2;
+select st_convexhull(shape) from cityAreas;
+select envelope(shape) from maj_riv2;
+select distinct sk.name as minn_poi, co.name as riv_name from maj_riv2 co,minnesota_poi sk where Distance(co.shape,sk.shape)<100 limit 10000;

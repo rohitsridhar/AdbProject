@@ -1,0 +1,11 @@
+select dimension(geometry) from swamps;
+select dimension(geometry) from maj_riv;
+select dimension(geometry) from airports;
+select area(geometry) from swamps;
+select max(area(geometry)) from swamps;
+select length(geometry) from maj_riv where name='FOUNTAIN CR';
+select min(length(geometry)) from maj_riv;
+select length(geometry) from maj_riv;
+select convexhull(geometry) from swamps;
+select envelope(geometry) from maj_riv;
+select sk.name as minn_poi, co.name as riv_name from maj_riv co,airports sk where Distance(co.geometry,sk.geometry)<100 limit 10000;

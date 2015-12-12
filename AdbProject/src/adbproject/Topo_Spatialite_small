@@ -1,0 +1,11 @@
+select w.pk_uid,w1.pk_uid from airports w,airports w1 where w.pk_uid<>w1.pk_uid and equals(w.geometry,w1.geometry)=1 limit 30;
+select na.pk_uid,na1.pk_uid from swamps na,swamps na1 where equals(na.geometry,na1.geometry)=1 limit 20;
+select na.pk_uid,na1.pk_uid from swamps na,swamps na1 where disjoint(na.geometry,na1.geometry)=1 and na.pk_uid<>na1.pk_uid limit 1000;
+select na.pk_uid,na1.pk_uid from swamps na,swamps na1 where st_touches(na.geometry,na1.geometry)=1 and na.pk_uid<>na1.pk_uid limit 1;
+select m.pk_uid,m1.pk_uid from maj_riv m,maj_riv m1 where crosses(m.geometry,m1.geometry)=1 and m.pk_uid=836;
+select m.pk_uid,n.pk_uid from maj_riv m,swamps n where intersects(m.geometry,n.geometry)=1 limit 5;
+select n.pk_uid,n1.pk_uid from swamps n,swamps n1 where within(n.geometry,n1.geometry)=1 limit 50; 
+select n.pk_uid,n1.pk_uid from swamps n,swamps n1 where contains(n.geometry,n1.geometry)=1 limit 50;
+select n.pk_uid,a.pk_uid from airports a,swamps n where within(a.geometry,n.geometry)=1 limit 10;
+select n.pk_uid,m.pk_uid from maj_riv m,swamps n where crosses(m.geometry,n.geometry)=1 and m.pk_uid=2322;
+select n.pk_uid,a.pk_uid from airports a,swamps n where intersects(a.geometry,n.geometry)=1 limit 1;
