@@ -60,7 +60,7 @@ public class MySQL_queries_D1_SA {
             "postgres", "nikhilagani");*/
          c =DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/adb_schema","root","nikhilagani");
          c.setAutoCommit(false);
-         //System.out.println("Opened database successfully");
+         
          double total;
          double used;
           
