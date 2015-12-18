@@ -1,0 +1,12 @@
+select  sk.gid from places co,places sk where st_equals(co.geom,sk.geom)=true  limit 50;
+select  sk.gid,co.gid from Poly_veg co,Poly_veg sk where st_equals(co.geom,sk.geom)=true limit 50;
+select  sk.gid,co.gid from Poly_veg co,Poly_veg sk where st_disjoint(co.geom,sk.geom)=true limit 50;
+select sk.gid,sk.dataset,co.gid from Poly_veg co,Poly_veg sk where st_touches(co.geom,sk.geom)=true and co.gid =2 and co.dataset='Trees';
+select sk.gid,co.gid from Majorroads co,Majorroads sk where st_crosses(co.geom,sk.geom)=true and sk.gid=115783;
+select sk.gid,co.gid from Poly_veg co,Poly_veg sk where st_within(co.geom,sk.geom)=true AND co.gid=51238 limit 10;
+select sk.gid,co.gid from Poly_veg co,Poly_veg sk where st_contains(co.geom,sk.geom)=true limit 5;
+select  sk.gid,co.gid from Places co,Poly_veg sk where st_within(co.geom,sk.geom)=true limit 100;
+select sk.gid,co.gid from Places co,Poly_veg sk where st_intersects(co.geom,sk.geom)=true limit 100;
+select sk.gid,co.gid from Places co,Majorroads sk where st_intersects(co.geom,sk.geom)=true and co.gid=734;
+select  sk.gid,co.gid from Poly_veg co,Poly_veg sk where st_overlaps(co.geom,sk.geom)=true limit 50;
+

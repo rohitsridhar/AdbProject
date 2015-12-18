@@ -1,0 +1,22 @@
+Time taken for query 1: 96 ms
+
+Time taken for query 2: 45 ms
+
+Time taken for query 3: 14 ms
+
+Time taken for query 4: 100 ms
+
+Time taken for query 5: 36 ms
+
+Time taken for query 6: 79 ms
+
+Time taken for query 7: 41 ms
+
+Time taken for query 8: 92 ms
+
+Time taken for query 9: 1732 ms
+
+Time taken for query 10: 105 ms
+
+Time taken for query 11: 88 ms
+

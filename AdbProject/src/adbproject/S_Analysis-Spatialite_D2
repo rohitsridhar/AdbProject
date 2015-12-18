@@ -1,0 +1,9 @@
+select dimension(geometry)from Crops;
+select area(geometry)from Crops;
+select dimension(geometry) from utilitylines;
+select length(geometry) from utilitylines;
+select max(length(geometry)) from utilitylines;
+select envelope(geometry) from utilitylines;
+select dimension(geometry) from waterpoints;
+select sk.pk_uid from Utilitylines co,waterpoints sk where Distance(co.geometry,sk.geometry)<100 limit 50;
+select buffer(geometry,5) from Crops limit 20;

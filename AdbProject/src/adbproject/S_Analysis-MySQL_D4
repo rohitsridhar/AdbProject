@@ -1,0 +1,11 @@
+select dimension(shape) from swamps;
+select st_dimension(shape) from maj_riv;
+select st_dimension(shape) from airports;
+select area(shape) from swamps;
+select max(area(shape)) from swamps;
+select st_length(shape) from maj_riv;
+select max(st_length(shape)) from maj_riv;
+select st_length(shape) from maj_riv;
+select st_convexhull(shape) from swamps;
+select envelope(shape) from maj_riv;
+select distinct sk.name as airports, co.name as riv_name from maj_riv co,airports sk where Distance(co.shape,sk.shape)<100 limit 10000;

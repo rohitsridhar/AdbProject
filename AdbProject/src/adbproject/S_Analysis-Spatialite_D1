@@ -1,0 +1,9 @@
+select dimension(geometry) from poly_veg;
+select area(geometry) from poly_veg limit 88000;
+select dimension(geometry) from MajorRoads;
+select length(geometry) from MajorRoads;
+select max(length(geometry)) from majorroads;
+select Envelope(geometry) from Majorroads;
+select dimension(geometry) from Places;
+select sk.pk_uid from majorroads co,places sk where Distance(co.geometry,sk.geometry)<100 limit 50;
+select buffer(geometry,5) from Poly_veg limit 20;

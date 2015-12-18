@@ -1,0 +1,11 @@
+select sk.OGR_FID,co.OGR_FID from minnesota_poi co,minnesota_poi sk where equals(co.shape,sk.shape)=true limit 30;
+select sk.OGR_FID,co.OGR_FID from cityareas co,cityareas sk where equals(co.shape,sk.shape)=true limit 50;
+select sk.OGR_FID,co.OGR_FID from cityareas co,cityareas sk where disjoint(co.shape,sk.shape)=true limit 50;
+select sk.OGR_FID,co.OGR_FID from cityareas co,cityareas sk where touches(co.shape,sk.shape)=true limit 5;
+select co.OGR_FID,sk.OGR_FID from cityareas co,cityareas sk where intersects(co.shape,sk.shape)=1 and co.OGR_FID=18957;
+select co.OGR_FID,sk.OGR_FID from maj_riv2 co,maj_riv2 sk where crosses(co.shape,sk.shape)=1 and co.OGR_FID=13741;
+select sk.OGR_FID,co.OGR_FID from cityareas co,cityareas sk where within(co.shape,sk.shape)=1 limit 5;
+select sk.OGR_FID,co.OGR_FID from cityareas co,cityareas sk where contains(co.shape,sk.shape)=true limit 5;
+select sk.OGR_FID,co.OGR_FID from Minnesota_poi co,cityAreas sk where intersects(co.shape,sk.shape)=1 and sk.ogr_fid=18957;
+select co.OGR_FID,sk.OGR_FID from maj_riv2 co,minnesota_poi sk where intersects(co.shape,sk.shape)=true and co.ogr_fid=13741;
+select co.OGR_FID,sk.OGR_FID from maj_riv2 co,cityareas sk where intersects(co.shape,sk.shape)=true and sk.OGR_FID=18957;

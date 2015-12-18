@@ -1,0 +1,11 @@
+select a.OGR_FID,a1.OGR_FID from airports a,airports a1 where equals(a.shape,a1.shape)=true and a.OGR_FID<>a1.OGR_FID limit 30;
+select na.OGR_FID,na1.OGR_FID from swamps na,swamps na1 where equals(na.shape,na1.shape)=true limit 20;
+select n.OGR_FID,n1.OGR_FID from swamps n,swamps n1 where disjoint(n.shape,n1.shape)=true and n.OGR_FID<>n1.OGR_FID limit 1000;
+select n.OGR_FID,n1.OGR_FID from swamps n,swamps n1 where touches(n.shape,n1.shape)=true limit 1;
+select m.OGR_FID,n.OGR_FID from swamps m,swamps n where intersects(m.shape,n.shape)=true limit 10
+select m.OGR_FID from maj_riv m,maj_riv m1 where crosses(m.shape,m1.shape)=true and m.OGR_FID=836;
+select n.OGR_FID,n1.OGR_FID from swamps n,swamps n1 where within(n.shape,n1.shape)=true limit 50; 
+select n.OGR_FID,n1.OGR_FID from swamps n,swamps n1 where contains(n.shape,n1.shape)=true limit 50; 
+select n.OGR_FID,a.OGR_FID from airports a,swamps n where intersects(a.shape,n.shape)=true limit 1;
+select n.OGR_FID,a.OGR_FID from airports a,maj_riv n where intersects(a.shape,n.shape)=true and n.OGR_FID=836;
+select n.OGR_FID from maj_riv m,swamps n where intersects(m.shape,n.shape)=true and m.OGR_FID=2322;

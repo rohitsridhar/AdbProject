@@ -1,0 +1,11 @@
+select sk.pk_uid,co.pk_uid from minnesota_poi co,minnesota_poi sk where equals(co.geometry,sk.geometry)=1 limit 30;
+select sk.pk_uid,co.pk_uid from cityAreas co,cityAreas sk where equals(co.geometry,sk.geometry)=1 limit 50;
+select sk.pk_uid,co.pk_uid from cityareas co,cityareas sk where disjoint(co.geometry,sk.geometry)=1 limit 50;
+select sk.pk_uid,co.pk_uid from cityareas co,cityareas sk where touches(co.geometry,sk.geometry)=1 limit 5;
+select co.pk_uid,sk.pk_uid from cityareas co,cityareas sk where intersects(co.geometry,sk.geometry)=1 and co.pk_uid=18957;
+select co.pk_uid,sk.pk_uid from maj_riv2 co,maj_riv2 sk where crosses(co.geometry,sk.geometry)=1 and co.pk_uid=13741;
+select sk.pk_uid,co.pk_uid from cityareas co,cityareas sk where within(co.geometry,sk.geometry)=1 limit 5;
+select sk.pk_uid,co.pk_uid from cityareas co,cityareas sk where contains(co.geometry,sk.geometry)=1 limit 5;
+select sk.pk_uid,co.pk_uid from Minnesota_poi co,cityAreas sk where intersects(co.geometry,sk.geometry)=1 and sk.pk_uid=18957;
+select co.pk_uid,sk.pk_uid from maj_riv2 co,minnesota_poi sk where intersects(co.geometry,sk.geometry)=1 and co.pk_uid=13741;
+select sk.pk_uid,co.pk_uid from Maj_riv2 co,cityAreas sk where intersects(co.geometry,sk.geometry)=1 and sk.pk_uid=18957;

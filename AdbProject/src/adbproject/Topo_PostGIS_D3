@@ -1,0 +1,11 @@
+select sk.gid,co.gid from minnesota_poi co,minnesota_poi sk where equals(co.geom,sk.geom)=true limit 30;
+select sk.gid,co.gid from cityAreas co,cityAreas sk where equals(co.geom,sk.geom)=true limit 50;
+select sk.gid,co.gid from cityAreas co,cityAreas sk where st_disjoint(co.geom,sk.geom)=true limit 50;
+select sk.gid,co.gid from cityAreas co,cityAreas sk where st_touches(co.geom,sk.geom)=true limit 5;
+select co.gid,sk.gid from cityAreas co,cityAreas sk where st_intersects(co.geom,sk.geom)=true and co.gid=18957;
+select co.gid,sk.gid from maj_riv2 co,maj_riv2 sk where st_crosses(co.geom,sk.geom)=true and co.gid=13741;
+select sk.gid,co.gid from cityAreas co,cityAreas sk where st_within(co.geom,sk.geom)=true limit 5;
+select sk.gid,co.gid from cityAreas co,cityAreas sk where st_contains(co.geom,sk.geom)=true limit 5;
+select sk.gid,co.gid from minnesota_poi co,cityAreas sk where st_intersects(co.geom,sk.geom)=true and sk.gid=18957;
+select co.gid,sk.gid from maj_riv2 co,minnesota_poi sk where st_intersects(co.geom,sk.geom)=true and co.gid=13741;
+select co.gid,sk.gid from maj_riv2 co,cityareas sk where st_intersects(co.geom,sk.geom)=true and sk.gid=18957;

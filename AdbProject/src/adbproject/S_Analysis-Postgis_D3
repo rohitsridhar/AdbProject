@@ -1,0 +1,11 @@
+select st_dimension(geom) from cityAreas;
+select st_dimension(geom) from maj_riv2;
+select st_dimension(geom) from minnesota_poi;
+select st_area(geom) from cityAreas;
+select max(st_area(geom)) from cityAreas;
+select st_length(geom) from maj_riv2;
+select max(st_length(geom)) from maj_riv2;
+select st_length(geom) from maj_riv2;
+select st_convexhull(geom) from cityAreas;
+select st_envelope(geom) from maj_riv2;
+select sk.name as minn_poi, co.name as riv_name from maj_riv2 co, minnesota_poi sk where St_Distance(co.geom,sk.geom)<100 limit 10000;

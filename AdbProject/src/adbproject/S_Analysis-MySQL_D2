@@ -1,0 +1,8 @@
+select dimension(shape)from Crops;
+select area(shape)from Crops;
+select dimension(shape) from UtilityLines;
+select length(shape) from UtilityLines;
+select max(length(shape))from UtilityLines;
+select envelope(shape) from UtilityLines;
+select dimension(shape) from waterpoints;
+select sk.OGR_FID from Utilitylines co,waterpoints sk where distance(co.shape,sk.shape)<100 limit 50;

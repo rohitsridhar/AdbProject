@@ -1,0 +1,14 @@
+In loop Time taken for query 1: 4306 ms
+In loop Time taken for query 1: 4234 ms
+In loop Time taken for query 1: 4032 ms
+In loop Time taken for query 1: 4131 ms
+In loop Time taken for query 1: 4095 ms
+Time taken for query 1: 4159 ms
+
+In loop Time taken for query 2: 19493 ms
+In loop Time taken for query 2: 19495 ms
+In loop Time taken for query 2: 19676 ms
+In loop Time taken for query 2: 19573 ms
+In loop Time taken for query 2: 19241 ms
+Time taken for query 2: 19495 ms
+

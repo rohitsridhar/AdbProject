@@ -1,0 +1,15 @@
+select w.gid,w1.gid from waterpoints w,waterpoints w1 where st_equals(w.geom,w1.geom)=true limit 50;
+select  sk.gid from Crops co,Crops sk where st_equals(co.geom,sk.geom)=true  limit 50;
+select  sk.gid from Crops co,Crops sk where st_disjoint(co.geom,sk.geom)=true limit 50;
+select sk.gid,co.gid from Crops co,Crops sk where st_touches(co.geom,sk.geom)=true  limit 50;
+select w.gid,w1.gid from utilitylines w,UtilityLines w1 where st_crosses(w.geom,w1.geom)=true and w1.gid=54878;
+select sk.gid,co.gid from Crops co,Crops sk where st_within(co.geom,sk.geom)=true and sk.gid=92933 limit 5;
+select sk.gid,co.gid from Crops co,Crops sk where st_contains(co.geom,sk.geom)=true limit 5;
+select sk.gid,co.gid from waterpoints co,Crops sk where st_within(co.geom,sk.geom)=true and sk.gid=92918;
+select sk.gid,co.gid from waterpoints co,Crops sk where st_intersects(co.geom,sk.geom)=true limit 50;
+select w.gid,w1.gid from waterpoints w,UtilityLines w1 where st_intersects(w.geom,w1.geom)=true limit 50;
+select sk.gid,co.gid from UtilityLines co,Crops sk where st_intersects(co.geom,sk.geom)=true limit 5;
+select  sk.gid from Crops co,Crops sk where st_overlaps(co.geom,sk.geom)=true  limit 50;
+
+
+
